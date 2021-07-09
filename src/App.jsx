@@ -1,9 +1,9 @@
 import './App.scss'
-import Home from './Home/Home'
+import Home from './components/home/Home'
 
 const App = () => {
   return (
-    <div clasName='app'>
+    <div className='app'>
       <Home />
     </div>
   )
