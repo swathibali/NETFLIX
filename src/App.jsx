@@ -1,10 +1,27 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.scss'
-import Home from './components/home/Home'
+import Home from './pages/home/Home'
+import Login from './pages/login/Login'
+import Register from './pages/register/Register'
+import Watch from './pages/watch/Watch'
+
+
 
 const App = () => {
+  const user=null
   return (
     <div className='app'>
-      <Home />
+      <Router>
+        {!user ? (
+          <Login />
+        ) :(
+        <Switch>
+          <Route exact path='/'>
+              <Home />
+          </Route>
+        </Switch>
+        )}
+      </Router>
     </div>
   )
 }
